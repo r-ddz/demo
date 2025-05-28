@@ -23,8 +23,12 @@
     <name>demo</name>
     <description>demo</description>
     <url/>
+    <!-- 定义项目模块 -->
     <modules>
+        <!-- 模块名为demo-math -->
         <module>demo-math</module>
+        <!-- 模块名为demo-leetcode -->
+        <module>demo-leetcode</module>
     </modules>
 
     <!-- 项目属性 -->
