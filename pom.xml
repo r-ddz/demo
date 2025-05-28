@@ -17,6 +17,7 @@
     <groupId>com.rddz</groupId>
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <!-- 打包模式 -->
     <packaging>pom</packaging>
 
     <!-- 项目基本信息 -->
@@ -48,7 +49,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
     </dependencies>
 
@@ -59,8 +60,36 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 跳过非可执行模块 -->
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <!-- 配置仓库列表 -->
+    <repositories>
+        <!-- 定义一个仓库 -->
+        <repository>
+            <!-- 仓库唯一标识符 -->
+            <id>aliyun-maven</id>
+            <!-- 仓库名称 -->
+            <name>Aliyun Maven</name>
+            <!-- 仓库URL -->
+            <url>https://maven.aliyun.com/repository/public</url>
+            <!-- 配置发布版本的属性 -->
+            <releases>
+                <!-- 是否启用发布版本 -->
+                <enabled>true</enabled>
+            </releases>
+            <!-- 配置快照版本的属性 -->
+            <snapshots>
+                <!-- 是否启用快照版本 -->
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
 </project>
